@@ -1,17 +1,21 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Tiles/TILE1.png" type="Texture" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 32, 32 )
 
 [sub_resource type="StreamTexture" id=2]
 flags = 4
-load_path = "res://.import/TILE1.png-7b81072da336af5a1d2fa2e6f70aab10.stex"
 
 [node name="Tile" type="StaticBody2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource( 1 )
 
-[node name="Tile1" type="Sprite" parent="CollisionShape2D"]
+[node name="Tile1" type="Sprite" parent="."]
 scale = Vector2( 2, 2 )
 texture = SubResource( 2 )
+
+[node name="Tile1" type="Sprite" parent="Tile1"]
+texture = ExtResource( 1 )

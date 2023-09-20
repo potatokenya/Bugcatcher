@@ -1,10 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://Tile3.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tile11.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Tile10.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Tile1.tscn" type="PackedScene" id=4]
-[ext_resource path="res://BACKGROUNDFINAL.png" type="Texture" id=5]
+[ext_resource path="res://Assets/BACKGROUNDFINALV2.png" type="Texture" id=5]
 [ext_resource path="res://Tile2.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Tile9.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Tile4.tscn" type="PackedScene" id=8]
@@ -14,10 +14,16 @@
 [ext_resource path="res://Tile6.tscn" type="PackedScene" id=12]
 [ext_resource path="res://Tile8.tscn" type="PackedScene" id=13]
 [ext_resource path="res://Tile12.tscn" type="PackedScene" id=14]
+[ext_resource path="res://Character.tscn" type="PackedScene" id=15]
+[ext_resource path="res://Bee.tscn" type="PackedScene" id=16]
+[ext_resource path="res://Ant.tscn" type="PackedScene" id=17]
+[ext_resource path="res://Shoes.tscn" type="PackedScene" id=18]
+[ext_resource path="res://Camera2D.gd" type="Script" id=19]
+[ext_resource path="res://UI.tscn" type="PackedScene" id=20]
 
-[node name="Node2D" type="Node2D"]
+[node name="MainScene" type="Node2D"]
 
-[node name="Backgroundfinal" type="Sprite" parent="."]
+[node name="Backgroundfinalv2" type="Sprite" parent="."]
 position = Vector2( 1400, 400 )
 texture = ExtResource( 5 )
 __meta__ = {
@@ -447,3 +453,40 @@ position = Vector2( 1952, 824 )
 
 [node name="Tile119" parent="." instance=ExtResource( 14 )]
 position = Vector2( 2016, 824 )
+
+[node name="Character" parent="." instance=ExtResource( 15 )]
+position = Vector2( 69, 89 )
+
+[node name="Bee2" parent="." instance=ExtResource( 16 )]
+position = Vector2( 1318, 343 )
+scale = Vector2( 2, 2 )
+
+[node name="Ant2" parent="." instance=ExtResource( 17 )]
+position = Vector2( 1799, 432 )
+
+[node name="Ant" parent="." instance=ExtResource( 17 )]
+position = Vector2( 242, 632 )
+
+[node name="Bee" parent="." instance=ExtResource( 16 )]
+position = Vector2( 635, 409 )
+scale = Vector2( 2, 2 )
+
+[node name="Shoes" parent="." instance=ExtResource( 18 )]
+position = Vector2( 1061, 648 )
+
+[node name="Bee3" parent="." instance=ExtResource( 16 )]
+position = Vector2( 2661, 271 )
+scale = Vector2( 2, 2 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 512, 304 )
+current = true
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 19 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource( 20 )]
