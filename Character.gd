@@ -54,8 +54,8 @@ func TakeDamage():
 		$"../CanvasLayer/UI".get_child(3).hide()
 	
 	if (health == 1):
-		$"../CanvasLayer/UI".get_child(2).hide()
-		queue_free()
+		get_tree().change_scene("Game_over.tscn")
+
 
 func die():
 	get_tree().reload_current_scene()
