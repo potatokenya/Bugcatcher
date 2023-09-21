@@ -4,8 +4,8 @@ var score = 0
 
 # physics
 const speed = 200
-const jumpForce = 600
-const gravity  = 800
+var jumpForce = 500
+const gravity  = 750
 
 var vel = Vector2(0,0)
 var grounded = false

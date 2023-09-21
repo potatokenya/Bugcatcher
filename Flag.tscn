@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Assets/Flag.png" type="Texture" id=1]
+[ext_resource path="res://Flag.gd" type="Script" id=2]
+
+[node name="Flag" type="Area2D"]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -210.5, -299, -209, -294, -203.7, -294, -200.5, -290.8, -200.5, -269, 246.5, -269, 246.5, -266, 248.5, 30, 245.5, 30, -200.5, 32, -200.5, 299.9, -246.5, 302.1, -246.5, 299, -248.5, -292, -245.6, -292, -240.5, -293.5, -240.5, -299.2, -238.5, -300.2, -238.5, -302, -210.5, -302 )
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_Flag_body_entered"]
