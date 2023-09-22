@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://CHARACTERJUMP.png" type="Texture" id=1]
+
+[node name="Characterjump" type="KinematicBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2( 2, 2 )
+polygon = PoolVector2Array( 3.5, -22.5, 4.5, -22, 4.5, -22, 5, -19.5, 11, -19.5, 11, -18, 12.5, -12, 19, -10.5, 20.5, -6, 20, -2, 5.5, 8.5, 4, 8, 4, 15.5, 3, 15.5, 3, 19.5, 7.5, 21.5, 7.5, 24, -2, 24, -2, 16, -3.5, 16, -5, 12.5, -5.5, 7.5, -10.5, 7.5, -13.5, 5, -14, -5.5, -11, -7.5, -9.5, -9.5, -10.5, -17, -6, -21, -1.5, -23, 3, -22.5 )
+
+[node name="Characterjump" type="Sprite" parent="."]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 1 )
