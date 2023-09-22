@@ -16,6 +16,9 @@ var health = 4
 # components
 onready var sprite = $Character
 onready var ui = get_node("/root/MainScene/CanvasLayer/UI")
+onready var jump=$jump
+onready var funny_smash_sound=$kill
+onready var hit=$hit
 
 func _ready():
 	pass
@@ -39,6 +42,7 @@ func _physics_process(delta):
 	# jump input
 	if Input.is_action_pressed("jump") and is_on_floor():
 		vel.y -= jumpForce
+		jump.play()
 	# sprite direction
 	if vel.x < 0:
 		sprite.flip_h = true
@@ -46,6 +50,7 @@ func _physics_process(delta):
 		sprite.flip_h = false
 
 func TakeDamage():
+	hit.play()
 	print("TakeDamage")
 	if (health == 3):
 		$"../CanvasLayer/UI".get_child(4).hide()
@@ -63,3 +68,6 @@ func die():
 func collect_bee (value):
 	score += value
 	ui.set_score_text(score)
+
+func play_funny_kill_smash_sound():
+	funny_smash_sound.play()

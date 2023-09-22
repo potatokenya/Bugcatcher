@@ -5,6 +5,8 @@ export var moveDist : int = 50
 onready var startX : float = position.x
 onready var targetX : float = position.x + moveDist
 
+onready var kill=$kill
+
 func _physics_process (delta):
 	# move to the "targetX" position
 	position.x = move_to(position.x, targetX, speed * delta)
@@ -58,11 +60,11 @@ func _on_Ant_body_entered(body):
 		
 		if position.x > body.position.x:
 			body.position.x -= 100
-			body.position.y -= 100
+			body.vel.y -= 100
 			
 		if position.x < body.position.x:
 			body.position.x += 100
-			body.position.y -= 100
+			body.vel.y -= 100
 		
 		#queue_free()
 

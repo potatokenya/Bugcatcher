@@ -17,4 +17,7 @@ func _ready():
 
 
 func _on_Area2D_body_entered(body):
+	if body.name == "Character":
+		body.play_funny_kill_smash_sound()
+
 	get_parent().queue_free()
