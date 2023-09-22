@@ -50,10 +50,28 @@ func move_to (current, to, step):
 
 
 func _on_Ant_body_entered(body):
-	print(str(body.name))
+	#print(str(body.name))
 	if body.name == "Character":
 		print("body hit player")
 		body.health = body.health - 1
 		body.TakeDamage(); 
+		
+		if position.x > body.position.x:
+			body.position.x -= 100
+			body.position.y -= 100
+			
+		if position.x < body.position.x:
+			body.position.x += 100
+			body.position.y -= 100
+		
 		#queue_free()
 
+
+
+
+
+func _on_kbLeft_body_entered(body):
+	if body.name == "Character":
+		print("skubbet væk")
+		body.position.x -= 100
+		body.position.y -= 100
